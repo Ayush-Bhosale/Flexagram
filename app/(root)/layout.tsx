@@ -9,7 +9,7 @@ import LeftSidebar from "@/components/Shared/Leftsidebar";
 import Bottombar from "@/components/Shared/Bottombar";
 import RightSidebar from "@/components/Shared/Rightsidebar";
 import Topbar from "@/components/Shared/Topbar";
-import LayoutProvider from "@/Providers/LayoutProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
