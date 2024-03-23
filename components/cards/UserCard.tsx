@@ -48,10 +48,7 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
       >
         View
       </Button>
-
-      
     </article>
   );
 }
-
 export default UserCard;
