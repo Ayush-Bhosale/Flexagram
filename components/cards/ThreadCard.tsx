@@ -113,6 +113,8 @@ function ThreadCard({
                 </Link>
               </div>
 
+             
+
               {isComment && comments.length > 0 && (
                 <Link href={`/thread/${id}`}>
                   <p className='mt-1 text-subtle-medium text-gray-1'>
@@ -156,7 +158,7 @@ function ThreadCard({
 
       {!isComment && community && (
         <Link
-          href={`/giants/${community.id}`}
+          href={`/communities/${community.id}`}
           className='mt-5 flex items-center'
         >
           <p className='text-subtle-medium text-gray-1'>
