@@ -7,7 +7,7 @@ function Topbar() {
   return (
     <nav className='topbar'>
       <Link href='/' className='flex items-center gap-4'>
-      <Image src='/assets/FG.PNG' alt='logo' width={28} height={28} />
+      <Image src='/assets/FG.png' alt='logo' width={28} height={28} />
       <p className='text-heading3-bold'>
       <span className='text-violet-500'>Flexa</span>
       <span className='text-white'>gram</span>

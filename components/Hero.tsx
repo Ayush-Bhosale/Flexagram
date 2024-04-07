@@ -26,7 +26,7 @@ const Hero = () => {
           </p>
           <div className="mt-6">
             <Button className='bg-primary-500'>
-              <Link href={"/quiz"}>
+              <Link href={"http://localhost:3000"}>
                 <span className="flex items-center">
                   I'm ready !!
                 </span>
