@@ -7,6 +7,8 @@ import ThreadCard from "@/components/cards/ThreadCard";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchThreadById } from "@/lib/actions/thread.action";
 import DirectMessage from "@/components/forms/DirectMessage";
+import MessageCard from "@/components/cards/MessageCard";
+import { formatDateString } from "@/lib/utils";
 
 export const revalidate = 0;
 
@@ -24,7 +26,7 @@ async function page({ params }: { params: { id: string } }) {
   return (
     <section className='relative'>
       <div>
-        <ThreadCard
+        <MessageCard
           id={thread._id}
           currentUserId={user.id}
           parentId={thread.parentId}
@@ -36,18 +38,10 @@ async function page({ params }: { params: { id: string } }) {
         />
       
 
-      <div className='mt-7'>
-        <DirectMessage
-          threadId={params.id}
-          currentUserImg={user.imageUrl}
-          currentUserId={JSON.stringify(userInfo._id)}
-        />
-      </div>
-      
 
       <div className='mt-10'>
         {thread.children.map((childItem: any) => (
-          <ThreadCard
+          <MessageCard
             key={childItem._id}
             id={childItem._id}
             currentUserId={user.id}
@@ -61,6 +55,18 @@ async function page({ params }: { params: { id: string } }) {
           />
         ))}
       </div>
+
+
+      
+      <div className='mt-7'>
+        <DirectMessage
+          threadId={params.id}
+          currentUserImg={user.imageUrl}
+          currentUserId={JSON.stringify(userInfo._id)}
+        />
+      </div>
+      
+      
       </div>
     </section>
   );

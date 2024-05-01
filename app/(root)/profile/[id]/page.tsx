@@ -18,8 +18,6 @@ async function Page({ params }: { params: { id: string } }) {
   const userInfo = await fetchUser(params.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
 
-  const isCurrentUserProfile = user.id === params.id;
-
   return (
     <section>
       <div className="flex justify-between items-center">
@@ -32,22 +30,7 @@ async function Page({ params }: { params: { id: string } }) {
           bio={userInfo.bio}
         />
 
-{
-  isCurrentUserProfile && (
-
-    <Button className='bg-black'>
-              @Flexagram
-            </Button>
-    
-  )
-}
-        {!isCurrentUserProfile && (
-          <Link href={`/dm/${params.id}`}>
-            <Button className='user-card_btn'>
-              Message
-            </Button>
-          </Link>
-        )}
+       
       </div>
 
       <div className='mt-9'>
